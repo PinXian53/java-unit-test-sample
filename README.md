@@ -1,2 +1,2 @@
-# java-unit-test-sample
+# Java Unit Test Sample
 This is a unit testing practice project in Java.
