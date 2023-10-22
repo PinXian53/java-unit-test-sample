@@ -22,8 +22,8 @@ public class IdentityNumberUtils {
 
         var total = 0;
         var firstCharValue = letterToCode(idChars[0]);
-        total += firstCharValue / 10;
-        total += (firstCharValue % 10) * 9;
+        total += (firstCharValue / 10) * weights[0];
+        total += (firstCharValue % 10) * weights[1];
         for (int i = 1; i < 9; i++) {
             int digit = Character.getNumericValue(idChars[i]);
             total += digit * weights[i + 1];
@@ -35,7 +35,7 @@ public class IdentityNumberUtils {
     }
 
     private static int letterToCode(char c) {
-        var letter = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
-        return letter.indexOf(c) + 10;
+        var letterSequence = "ABCDEFGHJKLMNPQRSTUVXYWZIO";
+        return letterSequence.indexOf(c) + 10;
     }
 }
